@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <p>are you sure to delete this item?</p><h2>"{{object}}"</h2>
+            <button type="submit">Delete</button> <span><a href="{% url 'home' %}">Cancel</a></span>
+        </form>
+    </div>
+    <style>
+        body{
+            background-color: rgb(240, 240, 240);
+        }
+        .container{
+            height: 30vh;
+            width: 30vw;
+            display: flex;
+            justify-content: center;
+            margin-top: 40vh;
+            position: absolute;
+            top: 30%;
+            left: 37%;
+            background-color: rgb(255, 255, 255);
+            margin: -25px 0 0 -25px;
+            border-radius: 15px;
+
+        }
+        form{
+            text-align: center;
+        }
+        form span{
+            float: right;
+            margin-left: 200px;
+            padding: 12px 19px;
+            background-color: rgb(61, 61, 61);
+            border-radius: 7px;
+        }
+        a{
+            text-decoration: none;
+            color: #ffff;
+            font-weight: 600;
+        }
+        button{
+            text-decoration: none;
+            color: #ffff;
+            font-weight: 600; 
+            padding: 12px 19px;
+            background-color: rgb(214, 21, 37);
+            border-radius: 7px;
+            outline: none;
+            border: none;
+            font-size: 15px;
+        }
+        p{
+            font-weight: 600;
+            font-size: 30px;
+            color: rgb(59, 59, 59);
+            text-transform: capitalize;
+            margin-top: 4vw;
+        }
+        h2{
+            color: rgb(146, 11, 34);
+            animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
+            animation-iteration-count: 6;
+        }
+        @keyframes shake {
+        10%, 90% {
+            transform: translate3d(-1px, 0, 0) rotate(-1deg);
+        }  
+        20%, 80% {
+            transform: translate3d(2px, 0, 0) rotate(2deg);
+        }
+        30%, 50%, 70% {
+            transform: translate3d(-3px, 0, 0) rotate(-3deg);
+        }
+        40%, 60% {
+            transform: translate3d(3px, 0, 0) rotate(3deg);
+        }
+        }
+        .errorlist li{
+            display: none;
+        }
+        ul{
+            display: none;
+        }
+    </style>
+</body>
+</html>
